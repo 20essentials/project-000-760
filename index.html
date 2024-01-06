@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lluvia</title>
+    <meta name="google" content="notranslate" />
+    <link rel="shortcut icon" href="assets/favicon.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script>
+      const d = document;
+      let amount = 300,
+        i = 0;
+      function llover() {
+        while (i < amount) {
+          let container = d.createElement('article'),
+            gota = d.createElement('div');
+          container.appendChild(gota);
+          container.style.setProperty('--s', `${Math.random() * 0.2 + 0.8}`);
+          container.style.setProperty(
+            '--x',
+            `${Math.random() * window.innerWidth}px`
+          );
+          container.style.animationDuration = `${Math.random() * 2 + 2}s`;
+          container.style.animationDelay = `-${Math.random() * 8 + 4}s`;
+          d.body.appendChild(container);
+          i++;
+        }
+      }
+
+      llover();
+    </script>
+  </body>
+</html>
